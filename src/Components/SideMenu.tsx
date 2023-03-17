@@ -3,7 +3,7 @@ import { BsSpotify } from "react-icons/bs";
 
 import { FaEllipsisH, FaSearch } from "react-icons/fa";
 import { Menu } from './SidebarComponent/Menu';
-
+import { listOfmenu } from './SidebarComponent/Menus'
 
 function SideMenu() {
   return (
@@ -19,8 +19,7 @@ function SideMenu() {
                    <div className='absolute top-6 right-4 text-gray-400 ' > <FaSearch/></div>  
             </div>
             <div>
-                <Menu/>
-
+                <Menu title={'MENU'} menuobj={listOfmenu} />
             </div>
 
 
