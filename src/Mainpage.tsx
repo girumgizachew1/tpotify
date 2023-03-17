@@ -6,7 +6,7 @@ import { SideMenu } from './Components/SideMenu'
 function Mainpage() {
   return (
  <div className='h-screen w-full relative' >
-<div className="h-screen w-full flex flex-row" style={{ backgroundImage: `url(./bg.jpg)`, backgroundSize: 'cover', filter: `grayscale(100)` , zIndex:'-1' }}>
+<div className="h-screen w-full flex flex-row" style={{ backgroundImage: `url(./bg.jpg)`, backgroundSize: 'cover',  zIndex:'-1' }}>
  
            <div className='basis-2/12' ><SideMenu /></div>    
            <div className='basis-9/12' ><Maincontainer/></div>   

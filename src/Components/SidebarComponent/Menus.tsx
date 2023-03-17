@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { MdAlbum  } from "react-icons/md";
+
 import { FaHome, FaPlayCircle,FaHeart ,FaWaveSquare ,FaMicrophoneAlt } from "react-icons/fa";
 import { icons } from 'react-icons/lib';
 
@@ -17,8 +19,8 @@ const listOfmenu = [
         },
         {
             id : 1,
-            icon : <FaPlayCircle/>,
-            name :"Playlist"
+            icon : <MdAlbum/>,
+            name :"Album"
         },
         {
             id : 1,
