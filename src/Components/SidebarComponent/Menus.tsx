@@ -2,7 +2,7 @@ import React from 'react'
 
 import { MdAlbum  } from "react-icons/md";
 
-import { FaHome, FaPlayCircle,FaHeart ,FaWaveSquare ,FaMicrophoneAlt } from "react-icons/fa";
+import { FaHome, FaHeart ,FaWaveSquare ,FaMicrophoneAlt } from "react-icons/fa";
 import { icons } from 'react-icons/lib';
 
 
