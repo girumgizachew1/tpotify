@@ -1,5 +1,7 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { playPause, setActiveSong } from '../../redux/features/playerSlice';
 import PlayPause from './Play';
 interface Song {
   title: string;
@@ -19,12 +21,15 @@ interface Props {
 }
 
 function SongCard({song, i , isPlaying, activeSong, data }) {
-
+  const dispatch = useDispatch();
 
   const handlePauseClick = () =>{
+    dispatch(playPause(false));
 
   }
   const handlePlayClick = () =>{
+    dispatch(setActiveSong({ song, data, i }));
+    dispatch(playPause(true));
     
   }
 

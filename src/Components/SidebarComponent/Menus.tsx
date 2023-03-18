@@ -10,27 +10,32 @@ const listOfmenu = [
         {
             id : 1,
             icon : <FaHome/>,
-            name :"Home"
+            name :"Home",
+            to : "/"
         },
         {
             id : 2,
             icon : <FaHeart/>,
-            name :"Favorite"
+            name :"Favorite",
+            to : "/faviorite"
         },
         {
             id : 1,
             icon : <MdAlbum/>,
-            name :"Album"
+            name :"Album",
+            to : "/album"
         },
         {
             id : 1,
             icon : <FaMicrophoneAlt/>,
-            name :"Artist"
+            name :"Artist",
+            to : "/artist"
         },
         {
             id : 1,
             icon : <FaWaveSquare/>,
-            name :"Discovery"
+            name :"Discovery",
+            to : "/discover"
         }
 ,
     ]
