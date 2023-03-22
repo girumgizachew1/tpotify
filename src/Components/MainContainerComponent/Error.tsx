@@ -2,7 +2,7 @@ import React from 'react'
 
 function Error() {
   return (
-    <div>There is something wrong, please try again</div>
+    <div className='text-gray-500' >There is something wrong, please try again</div>
   )
 }
 

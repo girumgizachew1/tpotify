@@ -2,9 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { playPause, setActiveSong } from '../../redux/features/playerSlice';
-import PlayPause from './Play';
-import { FaHeart } from "react-icons/fa";
-
+import PlayPause from '../MainContainerComponent/Play';
 interface Song {
   title: string;
   images?: {
@@ -22,7 +20,7 @@ interface Props {
   i: number;
 }
 
-function SongCard({song, i , isPlaying, activeSong, data }) {
+function SearchTrackCard({song, i , isPlaying, activeSong, data }) {
   const dispatch = useDispatch();
 
   const handlePauseClick = () =>{
@@ -33,29 +31,12 @@ function SongCard({song, i , isPlaying, activeSong, data }) {
     dispatch(setActiveSong({ song, data, i }));
     dispatch(playPause(true));
     
-  
   }
-  const handlefavorite = () => {
-    const savedSongs = JSON.parse(localStorage.getItem('savedSongs') || '[]');
-    const songIndex = savedSongs.findIndex((savedSong: { key: any; }) => savedSong.key === song.key);
   
-    if (songIndex >= 0) {
-      // Song is already saved, so remove it from the list
-      savedSongs.splice(songIndex, 1);
-      localStorage.setItem('savedSongs', JSON.stringify(savedSongs));
-      song.isSaved = false;
-    } else {
-      // Song is not saved yet, so add it to the list
-      savedSongs.push({ ...song, isSaved: true });
-      localStorage.setItem('savedSongs', JSON.stringify(savedSongs));
-      song.isSaved = true;
-    }
-  };
-  
-
+  console.log(song.key)
   return (
-    <div style={{ zIndex:1 }} className="flex flex-col w-48 p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
-      <div className="relative w-full h-40 group">
+    <div className="flex flex-col w-56 p-4 bg-white/5 bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+      <div className="relative w-full h-48 group">
       <div className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.title === song.title ? 'flex bg-black bg-opacity-70' : 'hidden'} `}>
           <PlayPause
               song={song}
@@ -70,24 +51,17 @@ function SongCard({song, i , isPlaying, activeSong, data }) {
 
       </div>
       <div className="mt-4 flex flex-col">
-        <p className="font-semibold text-case text-white truncate">
-          <Link to={`/songs/${song?.key}/${song?.artists[0]?.adamid}`}>
+        <p className="font-semibold text-lg text-white truncate">
+        <Link to={`/songs/${song?.key}/${song?.artists[0]?.adamid}`}>
             {song.title}
           </Link>
         </p>
         <p className="text-sm truncate text-gray-300 mt-1">
-            {song.subtitle}
+              {song.subtitle}
         </p>
-        <button className='justify-left'
-        onClick={handlefavorite}  >
-          <FaHeart className='text-white' />
-
-        </button>
       </div>
-      
-      
     </div>
   )
 }
 
-export {SongCard}
+export {SearchTrackCard}

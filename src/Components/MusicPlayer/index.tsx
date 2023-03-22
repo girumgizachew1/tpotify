@@ -17,7 +17,7 @@ const MusicPlayer: React.FC = () => {
   const [repeat, setRepeat] = useState<boolean>(false);
   const [shuffle, setShuffle] = useState<boolean>(false);
   const dispatch = useDispatch();
-
+ console.log(activeSong, currentSongs)
   useEffect(() => {
     if (currentSongs.length) dispatch(playPause(true));
   }, [currentIndex]);
