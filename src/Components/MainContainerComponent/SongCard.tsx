@@ -22,7 +22,7 @@ interface Props {
   i: number;
 }
 
-function SongCard({song, i , isPlaying, activeSong, data }) {
+function SongCard (song, i , isPlaying, activeSong, data ) {
   const dispatch = useDispatch();
 
   const handlePauseClick = () =>{
